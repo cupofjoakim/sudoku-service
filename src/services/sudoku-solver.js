@@ -3,7 +3,6 @@ const SolvePuzzle = (board) => {
 };
 
 const CheckBoardValidity = (board) => {
-  console.log(board);
   // Row
   board.forEach((row, rowIndex) => {
     // Use set to remove duplicates and check for size

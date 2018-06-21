@@ -12,6 +12,10 @@ routes.get('/', (req, res) => {
 
 routes.get('/sudoku', (req, res, next) => {
   let { difficulty } = req.query;
+  difficulty = parseInt(difficulty);
+  if (isNaN(difficulty)) {
+    throw Error('Expected a number for difficulty!');
+  }
   res.setHeader('Content-Type', 'application/json');
   res.send(SudokuGenerator.newPuzzle(difficulty));
 });

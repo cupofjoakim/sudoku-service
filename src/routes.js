@@ -12,9 +12,6 @@ routes.get('/', (req, res) => {
 
 routes.get('/sudoku', (req, res, next) => {
   let { difficulty } = req.query;
-  if (difficulty == null || difficulty === '') {
-    difficulty = 3;
-  }
   res.setHeader('Content-Type', 'application/json');
   res.send(SudokuGenerator.newPuzzle(difficulty));
 });

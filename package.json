@@ -93,9 +93,10 @@
     }
   },
   "jest": {
-    "testEnvironment": "node"
-  },
-  "directories": {
-    "test": "test"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ]
   }
 }

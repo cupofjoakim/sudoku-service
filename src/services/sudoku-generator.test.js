@@ -4,7 +4,7 @@ describe('newPuzzle', () => {
   let puzzleObject;
 
   beforeEach(() => {
-    puzzleObject = SudokuGenerator.newPuzzle(3);
+    puzzleObject = SudokuGenerator.newPuzzle();
   });
 
   afterEach(() => {

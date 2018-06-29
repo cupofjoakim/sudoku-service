@@ -22,7 +22,4 @@ const INVALID_BOARD = [
   [3, 6, 5, 1, 8, 7, 2, 9, 4],
 ];
 
-const GetFullBoard = (shouldBeValid) =>
-  shouldBeValid ? VALID_BOARD : INVALID_BOARD;
-
-export { GetFullBoard };
+export { VALID_BOARD, INVALID_BOARD };

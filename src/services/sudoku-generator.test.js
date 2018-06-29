@@ -1,4 +1,4 @@
-import { GetFullBoard } from '../helpers/test-helper';
+import { VALID_BOARD } from '../helpers/test-helper';
 import SudokuGenerator from './sudoku-generator';
 
 describe('generateBoard', () => {
@@ -13,9 +13,8 @@ describe('generateBoard', () => {
 
 describe('maskBoard', () => {
   it('returns a puzzle with some indexes blank', () => {
-    const validBoard = GetFullBoard(true);
     const difficulty = 3;
-    const maskedBoard = SudokuGenerator.maskBoard(validBoard, difficulty);
+    const maskedBoard = SudokuGenerator.maskBoard(VALID_BOARD, difficulty);
     let flattenedArray = Array.prototype.concat(...maskedBoard);
     expect(flattenedArray).toContain(null);
   });

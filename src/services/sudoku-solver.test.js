@@ -1,14 +1,12 @@
 import { CheckBoardValidity } from './sudoku-solver';
-import { GetFullBoard } from '../helpers/test-helper';
+import { VALID_BOARD, INVALID_BOARD } from '../helpers/test-helper';
 
 describe('Board Validity Checker', () => {
   it('returns true for a valid board', () => {
-    const board = GetFullBoard(true);
-    expect(CheckBoardValidity(board)).toBeTruthy();
+    expect(CheckBoardValidity(VALID_BOARD)).toBeTruthy();
   });
 
   it('returns false for an invalid board', () => {
-    const board = GetFullBoard(false);
-    expect(CheckBoardValidity(board)).toBeFalsy();
+    expect(CheckBoardValidity(INVALID_BOARD)).toBeFalsy();
   });
 });

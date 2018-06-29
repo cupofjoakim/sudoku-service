@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import SudokuGenerator from './services/sudoku-generator';
+import Board from './models/board';
 
 const routes = Router();
 
@@ -17,7 +17,8 @@ routes.get('/sudoku', (req, res, next) => {
     throw Error('Expected a number for difficulty!');
   }
   res.setHeader('Content-Type', 'application/json');
-  res.send(SudokuGenerator.newPuzzle(difficulty));
+  const sudokuBoard = new Board(difficulty);
+  res.send(sudokuBoard.getPuzzle());
 });
 
 export default routes;

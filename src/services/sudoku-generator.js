@@ -43,15 +43,4 @@ const maskBoard = (board, difficulty) => {
   return boardToMask;
 };
 
-const newPuzzle = (difficulty = 3) => {
-  const board = generateBoard();
-  const maskedBoard = maskBoard(board, difficulty);
-
-  return {
-    difficulty: difficulty,
-    solution: board,
-    puzzle: maskedBoard,
-  };
-};
-
-export default { newPuzzle, generateBoard, maskBoard };
+export default { generateBoard, maskBoard };

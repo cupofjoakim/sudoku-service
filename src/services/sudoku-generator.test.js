@@ -1,29 +1,22 @@
+import { GetFullBoard } from '../helpers/test-helper';
 import SudokuGenerator from './sudoku-generator';
 
-describe('newPuzzle', () => {
-  let puzzleObject;
-
-  beforeEach(() => {
-    puzzleObject = SudokuGenerator.newPuzzle();
-  });
-
-  afterEach(() => {
-    puzzleObject = null;
-  });
-
-  it('returns the difficulty integer', () => {
-    expect(puzzleObject.difficulty.toString()).toMatch(/\d/);
-  });
-
+describe('generateBoard', () => {
   it('returns a complete solution', () => {
-    let flattenedArray = Array.prototype.concat(...puzzleObject.solution);
+    const board = SudokuGenerator.generateBoard();
+    let flattenedArray = Array.prototype.concat(...board);
     for (let digit of flattenedArray) {
       expect(digit).toBeTruthy();
     }
   });
+});
 
+describe('maskBoard', () => {
   it('returns a puzzle with some indexes blank', () => {
-    let flattenedArray = Array.prototype.concat(...puzzleObject.puzzle);
+    const validBoard = GetFullBoard(true);
+    const difficulty = 3;
+    const maskedBoard = SudokuGenerator.maskBoard(validBoard, difficulty);
+    let flattenedArray = Array.prototype.concat(...maskedBoard);
     expect(flattenedArray).toContain(null);
   });
 });

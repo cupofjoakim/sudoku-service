@@ -7,7 +7,7 @@ const routes = Router();
  * GET home page
  */
 routes.get('/', (req, res) => {
-  res.render('index', { title: 'Express Babel' });
+  res.render('index', { title: 'Yeah, sudoku service is running alright' });
 });
 
 routes.get('/sudoku', (req, res, next) => {

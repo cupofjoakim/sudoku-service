@@ -16,6 +16,7 @@
     "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
     "test": "jest --watch --silent",
     "test:coverage": "jest --coverage --silent",
+    "test:coverage-report": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "esw -w src test"
   },
   "keywords": [
@@ -45,6 +46,7 @@
     "babel-eslint": "^8.0.3",
     "babel-jest": "^21.2.0",
     "babel-register": "^6.26.0",
+    "coveralls": "^3.0.2",
     "dotenv": "^4.0.0",
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^17.0.0",

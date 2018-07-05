@@ -1,11 +1,11 @@
 import { ShuffleArray, RotateArray } from '../helpers/util';
-import { CheckBoardValidity } from './sudoku-solver';
+import Solver from './sudoku-solver';
 
 const fillBoard = () => {
   const initialRow = ShuffleArray([...Array(9)].map((_, i) => i + 1));
   const board = [initialRow];
   for (let i = 0; i < initialRow.length - 1; i++) {
-    let offset = (i + 1) % 3 > 0 ? 3 : 1;
+    const offset = (i + 1) % 3 > 0 ? 3 : 1;
     board.push(RotateArray(board[i], offset));
   }
   return board;
@@ -14,14 +14,14 @@ const fillBoard = () => {
 const generateBoard = (tries = 0, maximumTries = 9) => {
   if (tries > maximumTries) return false;
   const board = fillBoard();
-  return CheckBoardValidity(board)
+  return Solver.CheckBoardValidity(board)
     ? board
     : generateBoard(tries + 1, maximumTries);
 };
 
 const tryToMask = (board) => {
-  let row = Math.floor(Math.random() * board.length);
-  let column = Math.floor(Math.random() * board[row].length);
+  const row = Math.floor(Math.random() * board.length);
+  const column = Math.floor(Math.random() * board[row].length);
   if (board[row][column] === null) {
     return tryToMask(board);
   }

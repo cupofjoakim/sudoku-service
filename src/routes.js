@@ -10,10 +10,10 @@ routes.get('/', (req, res) => {
   res.render('index', { title: 'Express Babel' });
 });
 
-routes.get('/sudoku', (req, res, next) => {
+routes.get('/sudoku', (req, res) => {
   let { difficulty } = req.query;
   difficulty = parseInt(difficulty);
-  if (isNaN(difficulty)) {
+  if (Number.isNaN(difficulty)) {
     throw Error('Expected a number for difficulty!');
   }
   res.setHeader('Content-Type', 'application/json');

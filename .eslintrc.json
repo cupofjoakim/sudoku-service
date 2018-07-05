@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": "airbnb/base",
   "env": {
     "node": true,
     "jest": true
@@ -13,7 +13,10 @@
     "arrow-parens": ["error", "always"],
     "arrow-body-style": ["error", "as-needed"],
     "dot-notation": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "radix": ["error", "as-needed"],
     "no-param-reassign": "off",
+    "no-plusplus": "off",
     "no-console": "off",
     "no-prototype-builtins": "off",
     "no-restricted-syntax": [

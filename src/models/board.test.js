@@ -16,14 +16,14 @@ describe('Board', () => {
   });
 
   it('returns a complete solution', () => {
-    let flattenedArray = Array.prototype.concat(...testBoard.board);
-    for (let digit of flattenedArray) {
+    const flattenedArray = Array.prototype.concat(...testBoard.board);
+    for (const digit of flattenedArray) {
       expect(digit).toBeTruthy();
     }
   });
 
   it('returns a puzzle with some indexes blank', () => {
-    let flattenedArray = Array.prototype.concat(...testBoard.maskedBoard);
+    const flattenedArray = Array.prototype.concat(...testBoard.maskedBoard);
     expect(flattenedArray).toContain(null);
   });
 });

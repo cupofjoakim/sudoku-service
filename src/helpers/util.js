@@ -7,9 +7,9 @@ const ShuffleArray = (arr) => {
 };
 
 const RotateArray = (arr, shiftOffset) => {
-  let temp = arr.slice();
+  const temp = arr.slice();
   for (let i = 0; i < shiftOffset; i++) {
-    let first = temp.shift();
+    const first = temp.shift();
     temp.push(first);
   }
   return temp;

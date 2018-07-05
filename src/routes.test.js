@@ -22,6 +22,12 @@ describe('GET /sudoku', () => {
       .expect(200);
   });
 
+  it('should return puzzle with default difficulty if other not specified', async () => {
+    await request(app)
+      .get('/sudoku')
+      .expect(200);
+  });
+
   it('should return 500 if difficulty is not a number', async () => {
     await request(app)
       .get('/sudoku?difficulty=totally-not-a-number')

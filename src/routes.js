@@ -12,6 +12,7 @@ routes.get('/', (req, res) => {
 
 routes.get('/sudoku', (req, res) => {
   let { difficulty } = req.query;
+  difficulty = difficulty || 3;
   difficulty = parseInt(difficulty);
   if (Number.isNaN(difficulty)) {
     throw Error('Expected a number for difficulty!');

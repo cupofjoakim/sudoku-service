@@ -11,10 +11,12 @@ const fillBoard = () => {
   return board;
 };
 
-const generateBoard = (tries = 0) => {
-  if (tries > 9) return false;
+const generateBoard = (tries = 0, maximumTries = 9) => {
+  if (tries > maximumTries) return false;
   const board = fillBoard();
-  return CheckBoardValidity(board) ? board : generateBoard(tries + 1);
+  return CheckBoardValidity(board)
+    ? board
+    : generateBoard(tries + 1, maximumTries);
 };
 
 const tryToMask = (board) => {

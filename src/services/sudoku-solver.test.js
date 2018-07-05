@@ -6,7 +6,14 @@ describe('Board Validity Checker', () => {
     expect(CheckBoardValidity(VALID_BOARD)).toBeTruthy();
   });
 
-  it('returns false for an invalid board', () => {
+  it('returns false for an invalid board (by row)', () => {
+    let board = INVALID_BOARD;
+    // Mess up a row
+    board[0][0] = board[0][1];
+    expect(CheckBoardValidity(board)).toBeFalsy();
+  });
+
+  it('returns false for an invalid board (by column)', () => {
     expect(CheckBoardValidity(INVALID_BOARD)).toBeFalsy();
   });
 });

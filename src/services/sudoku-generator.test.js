@@ -9,6 +9,11 @@ describe('generateBoard', () => {
       expect(digit).toBeTruthy();
     }
   });
+
+  it('returns false if exceeding the try limit', () => {
+    const board = SudokuGenerator.generateBoard(10);
+    expect(board).toBeFalsy();
+  });
 });
 
 describe('maskBoard', () => {

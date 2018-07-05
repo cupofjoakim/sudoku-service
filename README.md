@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/cupofjoakim/sudoku-service.svg?branch=master)](https://travis-ci.com/cupofjoakim/sudoku-service)
 
-A small microservice to generate a simple sudoku puzzle. Uses Babel for ES6 and will use jest for testing (when i get to it). Built during a hack evening at SBAB in Karlstad, Sweden.
+A small microservice to generate a simple sudoku puzzle. Babel / Express / Jest. Built during a hack evening at SBAB in Karlstad, Sweden.
 
 ## Getting started
 

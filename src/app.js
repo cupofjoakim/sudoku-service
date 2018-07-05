@@ -2,6 +2,8 @@ import express from 'express';
 import path from 'path';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
+
+import errorHandler from './error-handler';
 import routes from './routes';
 
 const app = express();
@@ -31,10 +33,6 @@ app.use((req, res, next) => {
 });
 
 // Error handler
-app.use((err, req, res) => {
-  res.status(err.status || 500).render('error', {
-    message: err.message,
-  });
-});
+app.use(errorHandler);
 
 export default app;

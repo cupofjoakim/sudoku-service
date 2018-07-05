@@ -19,6 +19,7 @@
     "no-plusplus": "off",
     "no-console": "off",
     "no-prototype-builtins": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
     "no-restricted-syntax": [
       "error",
       "ForInStatement",

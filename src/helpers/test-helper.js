@@ -10,7 +10,7 @@ const VALID_BOARD = [
   [5, 1, 8, 7, 2, 9, 4, 3, 6],
 ];
 
-const INVALID_BOARD = [
+const INVALID_BOARD_COLUMN = [
   [3, 6, 5, 1, 8, 7, 2, 9, 4],
   [1, 8, 7, 2, 9, 4, 3, 6, 5],
   [2, 9, 4, 3, 6, 5, 1, 8, 7],
@@ -22,4 +22,16 @@ const INVALID_BOARD = [
   [3, 6, 5, 1, 8, 7, 2, 9, 4],
 ];
 
-export { VALID_BOARD, INVALID_BOARD };
+const INVALID_BOARD_GROUP = [
+  [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  [4, 5, 6, 7, 8, 9, 1, 2, 3],
+  [7, 8, 9, 1, 2, 3, 4, 5, 6],
+  [2, 3, 4, 5, 6, 7, 8, 9, 1],
+  [5, 6, 7, 8, 9, 1, 2, 3, 4],
+  [6, 7, 8, 9, 1, 2, 3, 4, 5],
+  [3, 4, 5, 6, 7, 8, 9, 1, 2],
+  [8, 9, 1, 2, 3, 4, 5, 6, 7],
+  [9, 1, 2, 3, 4, 5, 6, 7, 8],
+];
+
+export { VALID_BOARD, INVALID_BOARD_GROUP, INVALID_BOARD_COLUMN };
